@@ -34,7 +34,7 @@ const connectDB = async () => {
 };
 
 connectDB().then(() => {
-  app.listen(6000, () => {
-    console.log("Server connected at Port : 6000");
+  app.listen(5000, () => {
+    console.log("Server connected at Port : 5000");
   });
 });
