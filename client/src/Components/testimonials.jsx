@@ -1,40 +1,45 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import image1 from "../assets/CEO.jpg"
+import image2 from "../assets/director.jpg"
+import image3 from "../assets/Entrepreneur.jpg"
+import image4 from "../assets/Marketing Head.jpg"
+import image5 from "../assets/Investor.jpg"
 
 const testimonials = [
   {
     name: "Smith Henry",
     role: "CEO",
-    image: "https://randomuser.me/api/portraits/men/10.jpg",
+    image: image1,
     feedback:
       "The ConnectLocal Business Mixer organized by Busitron was incredible. The connections I made have opened doors to new collaborations and partnerships.",
   },
   {
     name: "Shaik Zobain",
     role: "Director",
-    image: "https://randomuser.me/api/portraits/women/11.jpg",
+    image: image2,
     feedback:
       "I've been a member of Busitron and have seen it evolve into a dynamic community of professionals. Their webinars offer top-notch insights.",
   },
   {
     name: "Robert Ken",
     role: "Entrepreneur",
-    image: "https://randomuser.me/api/portraits/men/12.jpg",
+    image: image3,
     feedback:
       "As a business owner, networking is crucial. Busitron has been instrumental in connecting me with potential clients and partners.",
   },
   {
     name: "Alice Morgan",
     role: "Marketing Head",
-    image: "https://randomuser.me/api/portraits/women/12.jpg",
+    image:image4,
     feedback:
       "Networking has never been this seamless. Busitron’s community helped me expand my professional circle and grow my business.",
   },
   {
     name: "John Carter",
     role: "Investor",
-    image: "https://randomuser.me/api/portraits/men/13.jpg",
+    image: image5,
     feedback:
       "Busitron is the perfect platform for meeting like-minded professionals and exploring new opportunities.",
   },

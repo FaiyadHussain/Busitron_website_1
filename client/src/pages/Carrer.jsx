@@ -20,7 +20,7 @@
     }, []);
 
     return (
-     <div className="overflow-x-hidden">
+     <div>
        <div className="min-h-screen mt-12 bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white px-8 py-16 flex items-center justify-center">
         <div className="max-w-5xl w-full space-y-12">
           
@@ -42,7 +42,12 @@
                   <h3 className="text-2xl font-semibold text-white">{job.title}</h3>
                   <p className="text-gray-400 mt-2">💼 Experience: {job.experience}</p>
                   <p className="text-gray-400">💰 Salary: {job.salary}</p>
-                  <p className="text-gray-300 mt-4 leading-relaxed">{job.jobDescription}</p>
+                  <p className="text-gray-300 mt-4 leading-relaxed">
+  {job.jobDescription.length > 100 
+    ? `${job.jobDescription.slice(0, 100)}...` 
+    : job.jobDescription}
+</p>
+
                   <button
                     className="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition"
                     onClick={() => navigate(`/job/${job._id}`)}

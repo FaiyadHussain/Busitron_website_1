@@ -129,8 +129,6 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
           </h1>
 
           <form ref={formRef} onSubmit={handleSubmit} className="bg-gray-900 bg-opacity-70 p-8 rounded-lg shadow-lg">
-            
-            {/* Error message (only visible if there's an error) */}
             {error && <p className="text-red-500 text-left mb-3">{error}</p>}
 
             <div className="mb-4">

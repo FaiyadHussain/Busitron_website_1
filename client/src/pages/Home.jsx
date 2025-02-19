@@ -22,14 +22,12 @@ const Home = () => {
   ];
 
   useEffect(() => {
-    // "Welcome to BUSITRON" animation
     gsap.fromTo(
       textRef.current,
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 1.5, ease: "power3.out" }
     );
 
-    // Tagline animation
     const interval = setInterval(() => {
       gsap.to(taglineRef.current, {
         opacity: 0,
@@ -44,7 +42,7 @@ const Home = () => {
           );
         },
       });
-    }, 4000); // Change every 4 seconds
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
@@ -62,22 +60,21 @@ const Home = () => {
       );
       renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setClearColor(0x000000, 0); // Transparent background
+      renderer.setClearColor(0x000000, 0);
       threeContainerRef.current.appendChild(renderer.domElement);
 
-      // Add Particle System
-      const particleCount = 1000;
+      const particleCount = 3000; // Increased for denser particles
       const positions = new Float32Array(particleCount * 3);
       const colors = new Float32Array(particleCount * 3);
 
       for (let i = 0; i < particleCount; i++) {
-        positions[i * 3] = (Math.random() - 0.5) * 20; // Random X
-        positions[i * 3 + 1] = (Math.random() - 0.5) * 20; // Random Y
-        positions[i * 3 + 2] = (Math.random() - 0.5) * 20; // Random Z
+        positions[i * 3] = (Math.random() - 0.5) * 35; // X-axis
+        positions[i * 3 + 1] = (Math.random() - 0.5) * 30; // Y-axis (starting position)
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 30; // Z-axis
 
-        colors[i * 3] = Math.random(); // Random R
-        colors[i * 3 + 1] = Math.random(); // Random G
-        colors[i * 3 + 2] = Math.random(); // Random B
+        colors[i * 3] = Math.random();
+        colors[i * 3 + 1] = Math.random();
+        colors[i * 3 + 2] = Math.random();
       }
 
       const particleGeometry = new THREE.BufferGeometry();
@@ -100,21 +97,28 @@ const Home = () => {
       particles = new THREE.Points(particleGeometry, particleMaterial);
       scene.add(particles);
 
-      camera.position.z = 15;
+      camera.position.z = 20;
 
-      // Animation Loop
+      // Animate function to move particles upward
       const animate = () => {
         requestAnimationFrame(animate);
 
-        // Animate particles
         const positions = particles.geometry.attributes.position.array;
+
         for (let i = 0; i < positions.length; i += 3) {
-          positions[i + 1] += Math.sin(Date.now() * 0.001 + i) * 0.01; // Floating effect
+          positions[i + 1] += 0.02; // Move particles upwards
+
+          // Reset particle if it moves too high
+          if (positions[i + 1] > 10) {
+            positions[i + 1] = -10; // Reset below the screen
+          }
         }
-        particles.geometry.attributes.position.needsUpdate = true;
+
+        particles.geometry.attributes.position.needsUpdate = true; // Update positions
 
         renderer.render(scene, camera);
       };
+
       animate();
     };
 
@@ -150,19 +154,15 @@ const Home = () => {
   return (
     <div className="overflow-x-hidden">
       <div className="relative max-w-svw min-h-screen flex items-center justify-center bg-black overflow-hidden">
-        {/* Three.js Particle System */}
         <div ref={threeContainerRef} className="absolute inset-0 z-0"></div>
-
-        {/* Text Content */}
         <div className="relative text-center text-white px-6 z-10">
-        <h1 ref={textRef} className="text-5xl sm:text-5xl  md:text-6xl lg:text-7xl font-bold mb-4  items-center">
-  Welcome To  {}
-  <span className="bg-gradient-to-r pt-10 from-[#df3482] to-[#4B0082] text-transparent bg-clip-text">
-    BUSITRON
-  </span>
-</h1>
-
-          <p ref={taglineRef} className="text-xl  pt-6 sm:text-3xl md:text-2xl">{taglines[taglineIndex]}</p>
+          <h1 ref={textRef} className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 items-center">
+            Welcome To {}
+            <span className="bg-gradient-to-r from-[#df3482] to-[#4B0082] text-transparent bg-clip-text">
+              BUSITRON
+            </span>
+          </h1>
+          <p ref={taglineRef} className="text-xl pt-6 sm:text-3xl md:text-2xl">{taglines[taglineIndex]}</p>
         </div>
       </div>
 
