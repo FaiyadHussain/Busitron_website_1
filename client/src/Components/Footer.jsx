@@ -64,7 +64,7 @@ const Footer = () => {
       <div className=" mt-8 border-t border-gray-700 pt-4 text-center text-gray-400 text-sm">
         © 2023 All Rights Reserved By <span className="bg-gradient-to-r from-[#df3482] to-[#4B0082] text-transparent bg-clip-text">BUSITRON</span>
         <br />
-        <span className="text-white mt-2 block">Done by Faiyad Hussain</span>
+       
       </div>
     </footer>
   );
