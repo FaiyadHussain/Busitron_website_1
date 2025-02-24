@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 const Career = () => {
   const navigate = useNavigate();
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+  
 
   useEffect(() => {
     const fetchJobs = async () => {

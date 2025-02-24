@@ -1,6 +1,7 @@
 // CreateJob.js
-import React, { useState } from "react";
+import React, { useState  , useEffect } from "react";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 const CreateJob = () => {
   const [title, setTitle] = useState("");
@@ -11,6 +12,13 @@ const CreateJob = () => {
   const [success, setSuccess] = useState("");
 
   const token = localStorage.getItem("Token");
+
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+  
 
   const handleAddJob = async (e) => {
     e.preventDefault();

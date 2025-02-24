@@ -8,12 +8,20 @@ import Testimonials from "../Components/testimonials";
 import Statistics from "../Components/Statistics";
 import Team from "../Components/Team";
 import TechnologiesUsed from "../Components/TechnologiesUsed";
+import { useLocation } from "react-router-dom"; 
 
 const Home = () => {
   const textRef = useRef(null);
   const taglineRef = useRef(null);
   const [taglineIndex, setTaglineIndex] = useState(0);
   const threeContainerRef = useRef(null);
+
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+  
 
   const taglines = [
     "Unlocking Opportunities, One Connection at a Time",
