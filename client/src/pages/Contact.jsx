@@ -25,15 +25,15 @@ const ContactUs = () => {
 
     emailjs
       .send(
-        "service_r47yg1n", // Replace with your EmailJS service ID
-        "template_sts08af", // Replace with your EmailJS template ID
+        "service_ef78scj", // Replace with your EmailJS service ID
+        "template_4qqu0o8", // Replace with your EmailJS template ID
         {
           user_name: formData.name,
           user_email: formData.email,
           user_phone: formData.phone,
           message: formData.message,
         },
-        "W__qszFPwA2eJ3L1J" // Replace with your EmailJS public key
+        "lLVGoI5_p8DwhBpC-" // Replace with your EmailJS public key
       )
       .then(
         (response) => {

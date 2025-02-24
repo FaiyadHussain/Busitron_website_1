@@ -1,42 +1,36 @@
 import React from "react";
 import { motion } from "framer-motion";
+import image1 from "../assets/HrManger.jpg"
 
 const team = [
   {
-    name: "Andy",
-    role: "Solutions Designer",
+    name: "P Sri Hari Varma",
+    role: "Managing Director",
     image: "/team1.jpg",
     description:
-      "Andrew leads the design and development team to deliver cutting edge solutions.",
+      "P Sri Hari Varma ensures our seamless operations and successful project deliveries.",
   },
   {
-    name: "Sateesh",
-    role: "Lead Front End Developer",
+    name: "A Souumiya Sravinthi",
+    role: "Director",
     image: "/team2.jpg",
-    description:
-      "Sateesh guides our design team in the delivery of cutting edge solutions.",
+    description: "A Souumiya Sravinthi provides strategic leadership and business direction.",
   },
   {
-    name: "Ramesh",
-    role: "CFO",
+    name: "A Manikanta Madhu",
+    role: "Chief Operation Officer",
     image: "/team3.jpg",
-    description: "Ramesh is our resident number man.",
+    description: "A Manikanta Madhu oversees operational efficiency and project execution.",
   },
   {
-    name: "Pranay",
-    role: "Project & Operations Manager",
-    image: "/team4.jpg",
-    description:
-      "Pranay ensures our seamless operations and successful project deliveries.",
-  },
-  {
-    name: "Akhila",
+    name: "Kappala Kartheek",
     role: "HR Manager",
-    image: "/team5.jpg",
+    image:image1,  // Fixed issue here
     description:
-      "Akhila cultivates a positive work environment and prioritizes the well-being of our team.",
+      "Kartheek cultivates a positive work environment and prioritizes the well-being of our team.",
   },
 ];
+
 
 const Team = () => {
   return (
