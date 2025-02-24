@@ -76,7 +76,8 @@ const JobDetails = () => {
   };
 
   return (
-    <div className="min-h-screen mt-12 bg-black text-white px-6 py-12 flex flex-col items-center">
+  <div className="overflow-hidden">
+      <div className="min-h-screen w-[100%] mt-12 bg-black text-white px-6 py-12 flex flex-col items-center">
       <div className="max-w-3xl w-full">
         <h1 className="text-4xl font-bold border-l-4 border-blue-500 pl-4 mb-6">{job.title}</h1>
         <p className="text-lg text-gray-300 mb-4"><strong>Salary:</strong> {job.salary}</p>
@@ -144,6 +145,7 @@ const JobDetails = () => {
           onClick={() => navigate("/careers")}>Back to Careers</button>
       </div>
     </div>
+  </div>
   );
 };
 
