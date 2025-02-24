@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { FaLightbulb, FaUsers, FaLock, FaChartBar } from "react-icons/fa";
 import "../App.css";
@@ -27,17 +28,28 @@ const WhyChooseUs = () => {
         <div className="absolute top-0 left-0 w-full h-full animate-lines pointer-events-none"></div>
       </div>
 
-      {/* Title Section */}
-      <div className="flex flex-col items-center relative z-10 mb-10">
+      {/* Title Section with Animation */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="flex flex-col items-center relative z-10 mb-10"
+      >
         <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white uppercase tracking-wide">
-         WHAT WE DO
+          WHAT WE DO
         </h2>
         <div className="w-20 h-1 bg-yellow-500 mt-3"></div>
-      </div>
+      </motion.div>
 
-      <p className="text-md font-semibold sm:text-lg text-gray-300 max-w-4xl mx-auto relative z-10 mb-10 px-4">
-      At Busitron, our mission is to connect businesses, foster collaboration, and drive growth through an innovative networking platform. We understand the power of strong connections and the impact they can have on your business's success. That's why we've developed a platform that brings together businesses of all sizes, industries, and backgrounds
-      </p>
+      {/* Paragraph with Animation */}
+      <motion.p
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+        className="text-md font-semibold sm:text-lg text-gray-300 max-w-4xl mx-auto relative z-10 mb-10 px-4"
+      >
+        At Busitron, our mission is to connect businesses, foster collaboration, and drive growth through an innovative networking platform. We understand the power of strong connections and the impact they can have on your business's success. That's why we've developed a platform that brings together businesses of all sizes, industries, and backgrounds.
+      </motion.p>
 
       {/* Feature Cards */}
       <div

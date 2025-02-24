@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import * as THREE from "three";
-import WhyChooseUs from "../Components/Whywechooseu";
+import WhyChooseUs from "../Components/WhatWeDo";
 import WhoWeAre from "../Components/WhoWeAre";
 import AboutBusitron from "../Components/AboutBusitron";
 import Testimonials from "../Components/testimonials";
