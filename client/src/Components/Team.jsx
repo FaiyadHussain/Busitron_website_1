@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import image1 from "../assets/HrManger.jpg"
+import image2 from "../assets/Madhu.jpeg"
 
 const team = [
   {
@@ -14,12 +15,12 @@ const team = [
     name: "A Souumiya Sravanthi",
     role: "Director",
     image: "/team2.jpg",
-    description: "A Souumiya Sravinthi provides strategic leadership and business direction.",
+    description: "A Souumiya Sravanthi provides strategic leadership and business direction.",
   },
   {
     name: "A Manikanta Madhu",
     role: "Chief Operation Officer",
-    image: "/team3.jpg",
+    image: image2,  // Fixed issue here
     description: "A Manikanta Madhu oversees operational efficiency and project execution.",
   },
   {
