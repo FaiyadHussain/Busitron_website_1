@@ -11,7 +11,7 @@ const team = [
       "P Sri Hari Varma ensures our seamless operations and successful project deliveries.",
   },
   {
-    name: "A Souumiya Sravinthi",
+    name: "A Souumiya Sravanthi",
     role: "Director",
     image: "/team2.jpg",
     description: "A Souumiya Sravinthi provides strategic leadership and business direction.",
