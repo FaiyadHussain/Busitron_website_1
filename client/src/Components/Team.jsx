@@ -2,20 +2,22 @@ import React from "react";
 import { motion } from "framer-motion";
 import image1 from "../assets/HrManger.jpg"
 import image2 from "../assets/Madhu.jpeg"
+import image3 from "../assets/Sri.Hari.jpeg"
+import image4 from "../assets/Sowmya Sravanti.jpeg"
 
 const team = [
   {
     name: "P Sri Hari Varma",
     role: "Managing Director",
-    image: "/team1.jpg",
+    image: image3,  // Fixed issue here
     description:
       "P Sri Hari Varma ensures our seamless operations and successful project deliveries.",
   },
   {
-    name: "A Souumiya Sravanthi",
+    name: "A Sowmya Durga Sravanthi",
     role: "Director",
-    image: "/team2.jpg",
-    description: "A Souumiya Sravanthi provides strategic leadership and business direction.",
+    image: image4,  // Fixed issue here
+    description: "A Sowmya Durga Sravanthi provides strategic leadership and business direction.",
   },
   {
     name: "A Manikanta Madhu",
@@ -53,9 +55,9 @@ const Team = () => {
       ></motion.div>
 
       <div className="relative flex items-center justify-center w-full mb-10">
-        <div className="h-1 w-20 bg-red-500"></div>
+        <div className="h-1 w-20 bg-yellow-500"></div>
         <h2 className="text-3xl font-bold mx-4">Highly Qualified Team</h2>
-        <div className="h-1 w-20 bg-red-500"></div>
+        <div className="h-1 w-20 bg-yellow-500"></div>
       </div>
       <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
         {team.map((member, index) => (
@@ -70,7 +72,7 @@ const Team = () => {
             <div className="relative mb-4">
               <img
                 src={member.image}
-                className="w-28 h-28 rounded-full object-cover border-4 border-gray-500 shadow-md"
+                className="w-30 h-34  rounded-full object-cover border-4 border-gray-500 shadow-md"
                 alt={member.name}
               />
             </div>

@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import * as THREE from "three";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
 
 const Login = ({ isLoggedIn, setIsLoggedIn }) => {
   const textRef = useRef(null);
@@ -12,6 +13,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // Toggle password visibility
   const [error, setError] = useState(""); // State to store error message
 
   useEffect(() => {
@@ -143,17 +145,26 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
               />
             </div>
 
-            <div className="mb-4">
-              <label className="block text-left text-sm font-medium">Password</label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full mt-1 p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                placeholder="Enter your password"
-                required
-              />
-            </div>
+            <div className="mb-4 relative">
+  <label className="block text-left text-sm font-medium">Password</label>
+  <div className="relative">
+    <input
+      type={showPassword ? "text" : "password"}
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      className="w-full mt-1 p-3 pr-12 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+      placeholder="Enter your password"
+      required
+    />
+    <button
+      type="button"
+      className="absolute inset-y-0 right-4 flex items-center"
+      onClick={() => setShowPassword(!showPassword)}
+    >
+      {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
+    </button>
+  </div>
+</div>
 
             <button
               type="submit"
