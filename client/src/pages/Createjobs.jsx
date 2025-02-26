@@ -28,7 +28,7 @@ const CreateJob = () => {
 
     try {
       const response = await axios.post(
-        "https://busitron-website-1-1.onrender.com/admin/createJob",
+        "https://busitron-website-1.onrender.com/admin/createJob",
         newJob,
         { headers: { Authorization: token } }
       );

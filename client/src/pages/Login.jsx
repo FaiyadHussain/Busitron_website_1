@@ -104,7 +104,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
     setError(""); // Clear previous errors
 
     try {
-      const response = await axios.post("https://busitron-website-1-1.onrender.com/admin/login", {
+      const response = await axios.post("https://busitron-website-1.onrender.com/admin/login", {
         email,
         password,
       });
