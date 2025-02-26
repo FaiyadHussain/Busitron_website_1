@@ -31,7 +31,7 @@ emailRouter.post(
       // Email message setup
       const mailOptions = {
         from: email,
-        to: "hrm@busitron.com", // HR email
+        to: "infobusitron@gmail.com", // HR email
         subject: `Job Application for ${jobTitle} - ${name}`,
         text: `Dear HR,\n\nYou have received a new job application.\n\nName: ${name}\nEmail: ${email}\nDegree: ${degree}\nPassout Year: ${passoutYear}\n\nResume is attached.\n\nBest Regards,\n${name}`,
         replyTo: email,

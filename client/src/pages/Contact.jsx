@@ -140,7 +140,7 @@ const ContactUs = () => {
           </h2>
           <ul className="mt-4 text-gray-300 space-y-2">
             <li>📍 4-Floor, HITEC City, plot no 14d 1, Jai Hind Gandhi Rd, Madhapur, Hyderabad, Telangana 500081</li>
-            <li>📧 Email: support@busitron.com</li>
+            <li>📧 Email: infobusitron@gmail.com</li>
           </ul>
         </div>
       </div>
