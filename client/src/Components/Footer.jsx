@@ -60,14 +60,14 @@ const Footer = () => {
             <a href="#" className="text-gray-400 hover:text-white text-2xl"><FaYoutube /></a>
           </div>
         </div>
-
       </div>
 
       {/* Footer Bottom Text */}
-      <div className=" mt-8 border-t border-gray-700 pt-4 text-center text-gray-400 text-sm">
-        © 2023 All Rights Reserved By <span className="bg-gradient-to-r from-[#df3482] to-[#4B0082] text-transparent bg-clip-text">BUSITRON</span>
-        <br />
-       
+      <div className="mt-8 border-t  border-gray-700 pt-6 text-center text-gray-400 text-sm">
+        <p>
+          © 2023 All Rights Reserved By <span className="bg-gradient-to-r from-[#df3482] to-[#4B0082] text-transparent bg-clip-text">BUSITRON</span>
+        </p>
+        <p className="text-white font-semibold  text-xs mt-2">Crafted by : Faiyad Hussain</p>
       </div>
     </footer>
   );
