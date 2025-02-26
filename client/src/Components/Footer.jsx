@@ -63,12 +63,16 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom Text */}
-      <div className="mt-8 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm relative">
-        <p>
-          © 2023 All Rights Reserved By <span className="bg-gradient-to-r from-[#df3482] to-[#4B0082] text-transparent bg-clip-text">BUSITRON</span>
-        </p>
-        <p className="absolute right-6 bottom-4 font-semibold text-white text-xs">Crafted by : Faiyad Hussain</p>
-      </div>
+      <div className="mt-8 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm flex justify-center items-center relative">
+  <p>
+    © 2023 All Rights Reserved By 
+    <span className="bg-gradient-to-r from-[#df3482] to-[#4B0082] text-transparent bg-clip-text mx-1">
+      BUSITRON
+    </span>
+    | Crafted by: <span className="text-white font-semibold ml-1">Faiyad Hussain</span>
+  </p>
+</div>
+
     </footer>
   );
 };
