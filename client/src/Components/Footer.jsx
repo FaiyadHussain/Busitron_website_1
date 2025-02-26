@@ -16,6 +16,9 @@ const Footer = () => {
           <p className="flex items-center justify-center md:justify-start gap-2 text-gray-400 mt-2">
             <FaEnvelope /> support@busitron.com
           </p>
+          <p className="text-gray-400 mt-2">
+          📍 4-Floor, HITEC City, plot no 14d 1, Jai Hind Gandhi Rd, Madhapur, Hyderabad, Telangana 500081
+          </p>
         </div>
 
         {/* Important Links */}
