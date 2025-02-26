@@ -18,7 +18,7 @@ const JobList = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/jobs", {
+        const response = await axios.get("https://busitron-website-1-1.onrender.com/jobs", {
           headers: { Authorization: token },
         });
         setJobs(response?.data);
@@ -35,7 +35,7 @@ const JobList = () => {
 
   const updateJob = async () => {
     try {
-      const response = await axios.put(`http://localhost:5000/admin/updateJob/${editJob._id}`, formData, {
+      const response = await axios.put(`https://busitron-website-1-1.onrender.com/admin/updateJob/${editJob._id}`, formData, {
         headers: { Authorization: token },
       });
       setJobs(jobs.map((job) => (job._id === editJob._id ? response.data.updatedJob : job)));
@@ -48,7 +48,7 @@ const JobList = () => {
 
   const deleteJob = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/admin/deleteJob/${id}`, {
+      await axios.delete(`https://busitron-website-1-1.onrender.com/admin/deleteJob/${id}`, {
         headers: { Authorization: token },
       });
       setJobs(jobs.filter((job) => job._id !== id));
