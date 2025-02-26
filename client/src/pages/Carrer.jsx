@@ -18,7 +18,7 @@ const Career = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await axios.get("https://busitron-website-1-1.onrender.com/jobs");
+        const response = await axios.get("http://localhost:5000/jobs");
         setTimeout(() => {
           setJobs(response.data);
           setLoading(false);

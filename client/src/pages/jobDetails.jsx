@@ -20,7 +20,7 @@ const JobDetails = () => {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const response = await axios.get(`https://busitron-website-1-1.onrender.com/jobs/${jobId}`);
+        const response = await axios.get(`http://localhost:5000/jobs/${jobId}`);
         setJob(response.data);
       } catch (error) {
         console.error("Error fetching job:", error);
@@ -59,7 +59,7 @@ const JobDetails = () => {
     formDataToSend.append("jobTitle", job.title);
 
     try {
-      const response = await axios.post("https://busitron-website-1-1.onrender.com/send-application", formDataToSend, {
+      const response = await axios.post("http://localhost:5000/send-application", formDataToSend, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
