@@ -19,10 +19,10 @@ const Career = () => {
     const fetchJobs = async () => {
       try {
         const response = await axios.get("https://busitron-website-1.onrender.com/jobs");
-        setTimeout(() => {
+       console.log(response)
           setJobs(response.data);
           setLoading(false);
-        }, 1000); // Ensures loader is shown for at least 2 seconds
+        // Ensures loader is shown for at least 2 seconds
       } catch (error) {
         console.error("Error fetching jobs:", error);
         setLoading(false);
