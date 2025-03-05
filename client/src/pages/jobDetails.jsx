@@ -3,12 +3,12 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const JobDetails = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true); // Initially loading is true
   const { jobId } = useParams();
   const navigate = useNavigate();
   const [job, setJob] = useState(null);
   const [submitted, setSubmitted] = useState(false);
-  
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,6 +24,8 @@ const JobDetails = () => {
         setJob(response.data);
       } catch (error) {
         console.error("Error fetching job:", error);
+      } finally {
+        setLoading(false); // Set loading to false after fetching job
       }
     };
     fetchJob();
@@ -65,6 +67,17 @@ const JobDetails = () => {
       setLoading(false);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-black text-white">
+        <div className="text-center">
+          <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <h2 className="text-xl font-semibold">Loading job details...</h2>
+        </div>
+      </div>
+    );
+  }
 
   if (!job) {
     return (
@@ -127,8 +140,8 @@ const JobDetails = () => {
                 <select name="passoutYear" value={formData.passoutYear} onChange={handleChange} required
                   className="w-full p-2 mt-1 rounded bg-gray-700 text-white border border-gray-600">
                   <option value="">Select Year</option>
-                  {[...Array(6)].map((_, i) => (
-                    <option key={i} value={2020 + i}>{2020 + i}</option>
+                  {[...Array(7)].map((_, i) => (
+                    <option key={i} value={2020 + i}>{2019 + i}</option>
                   ))}
                 </select>
               </div>

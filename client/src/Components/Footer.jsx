@@ -2,6 +2,8 @@ import { FaEnvelope, FaInstagram, FaTwitter, FaLinkedin, FaYoutube } from "react
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-black text-white py-10 px-6">
       <hr className="border-t border-gray-700 mb-8" />
@@ -17,7 +19,7 @@ const Footer = () => {
             <FaEnvelope /> infobusitron@gmail.com
           </p>
           <p className="text-gray-400 mt-2">
-          📍 4-Floor, HITEC City, plot no 14d 1, Jai Hind Gandhi Rd, Madhapur, Hyderabad, Telangana 500081
+            📍 4-Floor, HITEC City, plot no 14d 1, Jai Hind Gandhi Rd, Madhapur, Hyderabad, Telangana 500081
           </p>
         </div>
 
@@ -64,15 +66,14 @@ const Footer = () => {
 
       {/* Footer Bottom Text */}
       <div className="mt-8 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm flex justify-center items-center relative">
-  <p>
-    © 2023 All Rights Reserved By 
-    <span className="bg-gradient-to-r from-[#df3482] to-[#4B0082] text-transparent bg-clip-text mx-1">
-      BUSITRON
-    </span>
-    | Crafted by: <span className="text-white font-semibold ml-1">Faiyad Hussain</span>
-  </p>
-</div>
-
+        <p>
+          © {currentYear} All Rights Reserved By 
+          <span className="bg-gradient-to-r from-[#df3482] to-[#4B0082] text-transparent bg-clip-text mx-1">
+            BUSITRON
+          </span>
+          | Crafted by: <span className="text-white font-semibold ml-1">Faiyad Hussain</span>
+        </p>
+      </div>
     </footer>
   );
 };
