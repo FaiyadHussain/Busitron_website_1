@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate , useLocation } from "react-router-dom";
 import axios from "axios";
 
 const JobDetails = () => {
@@ -8,6 +8,11 @@ const JobDetails = () => {
   const navigate = useNavigate();
   const [job, setJob] = useState(null);
   const [submitted, setSubmitted] = useState(false);
+
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -140,8 +145,8 @@ const JobDetails = () => {
                 <select name="passoutYear" value={formData.passoutYear} onChange={handleChange} required
                   className="w-full p-2 mt-1 rounded bg-gray-700 text-white border border-gray-600">
                   <option value="">Select Year</option>
-                  {[...Array(7)].map((_, i) => (
-                    <option key={i} value={2020 + i}>{2019 + i}</option>
+                  {[...Array(8)].map((_, i) => (
+                    <option key={i} value={2020 + i}>{2018 + i}</option>
                   ))}
                 </select>
               </div>
